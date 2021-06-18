@@ -1,7 +1,7 @@
 Package.describe({
 	name: 'rocketchat:tap-i18n',
 	summary: 'A comprehensive internationalization solution for Meteor',
-	version: '1.9.0',
+	version: '1.9.2',
 	git: 'https://github.com/TAPevents/tap-i18n',
 });
 
@@ -16,15 +16,15 @@ Package.onUse(function(api) {
 	api.use('underscore', both);
 	api.use('meteor', both);
 
-	api.use('raix:eventemitter@0.1.1', both);
-	api.use('meteorspark:util@0.2.0', both);
+	api.use('raix:eventemitter', both);
+	api.use('meteorspark:util', both);
 
 	api.use('tracker', both);
 	api.use('session', client);
 	api.use('jquery', client);
 	api.use('templating', client);
 
-	api.use('cfs:http-methods@0.0.27', server);
+	api.use('cfs:http-methods', server);
 
 	// load TAPi18n
 	api.add_files('lib/globals.js', both);
@@ -54,7 +54,7 @@ Package.registerBuildPlugin({
 	name: 'tap-i18n-compiler',
 	use: ['coffeescript', 'underscore', 'mdg:validation-error', 'aldeed:simple-schema@1.3.0', 'check@1.0.3', 'templating'],
 	npmDependencies: {
-		yamljs: '0.2.4',
+		yamljs: '0.3.0',
 	},
 	sources: [
 		'lib/globals.js',
